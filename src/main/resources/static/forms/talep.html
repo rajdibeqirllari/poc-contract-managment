@@ -41,7 +41,7 @@
 		<div class="controls">
 			<input class="form-control" type="date"
 				cam-variable-name="sozlesmeBaslangicTarihi" cam-variable-type="String"
-				id="sozlesmeBaslangicTarihi" id="sozlesmeBaslangicTarihi">
+				id="sozlesmeBaslangicTarihi" >
 		</div>
 	</div>
 	<div class="control-group">
@@ -55,16 +55,19 @@
 	<div class="control-group">
 		<label class="control-label">Bedelli</label>
 		<div class="form-check form-check-inline">
-			<input class="form-check-input" type="radio" ng-model="value" name="bedelli" ng-change='newValue(value)'
+			<input class="form-check-input" type="radio" ng-model="value" name="bedelli" ng-change="newValue(value)"
 				id="bedelliEvet" value="Evet"> <label
 				class="form-check-label" for="bedelliEvet">Evet</label>
 		</div>
 		<div class="form-check form-check-inline">
-			<input class="form-check-input" type="radio" ng-model="value" name="bedelli" ng-change='newValue(value)'
+			<input class="form-check-input" type="radio" ng-model="value" name="bedelli" ng-change="newValue(value)"
 				id="bedelliHayir" value="Hayir"> <label
 				class="form-check-label" for="bedelliHayir">Hayır</label>
 		</div>
 	</div>
+	
+
+	
 	<div ng-show="value == 'Evet'">
 		<div class="control-group">
 			<label class="control-label">Sözleşme Bedeli</label>
@@ -83,7 +86,7 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">Lisans Bitiş Tarihi</label>
+			<label class="control-label">Lisans Biti� Tarihi</label>
 			<div class="controls">
 				<input class="form-control" type="date"
 					cam-variable-name="lisansBitisTarihi" cam-variable-type="String"
@@ -113,23 +116,59 @@
 		</div>
 	</div>
 
+	<div class="control-group">		
+		<div class="controls">
+			<input style="display:none;" type="text" id="sozlesmeNo" cam-variable-name="sozlesmeNo" cam-variable-type="String">
+		</div>
+	</div>
+	
 	<script cam-script type="text/form-script">
-var variableManager = camForm.variableManager;
-$scope.newValue = function(value) {
-    console.log(value);
+		debugger;
 
-	/**
-    if (variableManager.variable('bedelli') != undefined) {
-        variableManager.createVariable({
-            name: 'bedelli',
-            type: 'String',
-            value: value,
-            isDirty: true
-        });
-    } else {
-        variableManager.variableValue('bedelli', value);
-    }
-	**/
-}
+		var variableManager = camForm.variableManager;		
+		$scope.newValue = function(value) {
+			console.log(value);
+
+			/**
+			if (variableManager.variable('bedelli') != undefined) {
+				variableManager.createVariable({
+					name: 'bedelli',
+					type: 'String',
+					value: value,
+					isDirty: true
+				});
+			} else {
+				variableManager.variableValue('bedelli', value);
+			}
+			**/
+		}
+		
+		camForm.on('form-loaded', function() {
+		// handle form loaded
+			debugger;
+		
+				var min = Math.ceil(100000);
+				var max = Math.floor(999999);
+				var abc = Math.floor(Math.random() * (max - min + 1)) + min;
+		
+				/**
+				variableManager.createVariable({
+					name: 'vSozlesmeNo',
+					type: 'String',
+					value: abc,
+					isDirty: true
+				});**/
+				
+				variableManager.variableValue('sozlesmeNo', abc);	  
+		});
+
+		camForm.on('submit', function(evt) { 
+			console.log(evt);
+
+		});
+		
     </script>
+	
+	
+	
 </form>

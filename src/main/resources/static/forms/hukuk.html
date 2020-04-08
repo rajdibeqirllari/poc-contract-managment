@@ -85,6 +85,17 @@
 				cam-variable-name="voucher" cam-variable-type="String" />
 		</div>
 	</div>
+
+	<br>
+	<div class="control-group">
+		<a id="doclink" target="_blank" href="" > Sözleşme Dokümanı </a>
+	</div>
+	<div class="control-group">	
+		<div class="controls">
+			<input style="display:none;" type="text" id="sozlesmeNo" cam-variable-name="sozlesmeNo" cam-variable-type="String">
+		</div>
+	</div>		
+
 	<hr>
 	<div class="control-group">
 		<label class="control-label">Yorum</label>
@@ -93,6 +104,12 @@
 				cam-variable-type="String" class="form-control"></textarea>
 		</div>
 	</div>
+		
+	<!--
+	<div id="examplePadBasic">
+		<iframe id="epframeexamplePadBasic" name="epframeexamplePadBasic" src="http://beta.etherpad.org/p/test?showControls=false&amp;showChat=false&amp;showLineNumbers=false&amp;useMonospaceFont=false&amp;userName=unnamed&amp;noColors=false&amp;userColor=false&amp;hideQRCode=false&amp;alwaysShowChat=false&amp;rtl=false" style="border:0; border-style:solid;" width="100%" height="300"></iframe>	
+	</div>	-->	
+	
 	<input type="button" ng-click="cancel()" value="Reddet" />
 
 	<script cam-script type="text/form-script">
@@ -107,5 +124,15 @@
       });
 $scope.complete();
 	  }
+
+		camForm.on('variables-fetched', function() {
+			  // handle variables fetched
+			  var variableManager = camForm.variableManager;
+			  debugger;
+			  var sozlesmeNo = variableManager.variables.sozlesmeNo.value;
+			  var username = 'hukukbirimi';
+			  var padUrl = 'http://localhost:9001/p/' + sozlesmeNo + '?userName=' + username;
+			  $('#doclink').attr('href', padUrl);
+    	});	  
 	</script>
 </form>
