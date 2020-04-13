@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_0jk1z0x" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.1">
-  <bpmn:process id="SozlesmeYonetimi" name="SozlesmeYonetimi" isExecutable="true">
+  <bpmn:process id="sozlesme" name="Sözleşme Yönetimi" isExecutable="true">
     <bpmn:startEvent id="Event_1n57nte">
       <bpmn:outgoing>Flow_0487jkb</bpmn:outgoing>
     </bpmn:startEvent>
@@ -69,7 +69,7 @@
     </bpmn:endEvent>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="SozlesmeYonetimi">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="sozlesme">
       <bpmndi:BPMNEdge id="Flow_0b0nh4w_di" bpmnElement="Flow_0b0nh4w">
         <di:waypoint x="800" y="635" />
         <di:waypoint x="800" y="812" />
