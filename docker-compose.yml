@@ -15,3 +15,9 @@ services:
       NODE_ENV: production
     ports:
       - 80:80
+
+  etherpad:
+    image: etherpad/etherpad
+    container_name: poc-contract-management-etherpad
+    ports:
+      - 9001:9001
