@@ -1,9 +1,17 @@
 version: "3"
 
 services:
-  web:
+  backend:
     image: caltuntas/poc-contract-management
     build: .
     container_name: poc-contract-management
     ports:
       - 8080:8080
+  frontend:
+    image: caltuntas/poc-contract-management-ui
+    build: .
+    container_name: poc-contract-management-ui
+    environment:
+      NODE_ENV: production
+    ports:
+      - 80:80
