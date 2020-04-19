@@ -2,6 +2,14 @@
 
 <form role="form" class="form-horizontal">
 	<div class="control-group">
+		<label class="control-label">Akış Numarası</label>
+		<div class="controls">
+			<input class="form-control" type="int"
+				cam-variable-name="workflowNo" cam-variable-type="integer"
+				id="workflowNo" readonly>
+		</div>
+	</div>	
+	<div class="control-group">
 		<label class="control-label">Şablon</label>
 		<div class="controls">
 			<select class="form-control" required cam-variable-name="sablon"
@@ -86,7 +94,7 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">Lisans Biti� Tarihi</label>
+			<label class="control-label">Lisans Biti� Tarihi</label>
 			<div class="controls">
 				<input class="form-control" type="date"
 					cam-variable-name="lisansBitisTarihi" cam-variable-type="String"
@@ -168,7 +176,7 @@
 		});
 		
     </script>
-	
-	
-	
+		
+	<input type="hidden" id="startUser" cam-variable-name="startUser" cam-variable-type="String">
+	<input type="hidden" id="actionUser" cam-variable-name="actionUser" cam-variable-type="String">
 </form>

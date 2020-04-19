@@ -3,6 +3,14 @@
 <form role="form" class="form-horizontal">
     <h2>Talep Bilgileri</h2>
 	<div class="control-group">
+		<label class="control-label">Akış Numarası</label>
+		<div class="controls">
+			<input class="form-control" type="int"
+				cam-variable-name="workflowNo" cam-variable-type="integer"
+				id="workflowNo" readonly>
+		</div>
+	</div>	    
+	<div class="control-group">
 		<label class="control-label">Şablon</label>
 		<div class="controls">
 			<input class="form-control" type="text" readonly
@@ -87,4 +95,6 @@
 				cam-variable-name="voucher" cam-variable-type="String" />
 		</div>
 	</div>
+		<input type="hidden" id="startUser" cam-variable-name="startUser" cam-variable-type="String">
+	<input type="hidden" id="actionUser" cam-variable-name="actionUser" cam-variable-type="String">
 </form>
